@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Modular Voice Profile Manager for Roblox Town Director.
 
 Manages permanent internal voice IDs (V01-V06 and custom roles), provider
