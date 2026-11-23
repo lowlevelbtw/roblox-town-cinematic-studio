@@ -60,7 +60,7 @@ A production can be decomposed into a hierarchy:
 
 The three execution profiles are `FRONTIER`, `BALANCED`, and `RESOURCE_EFFICIENT`. The skill adapts prompt depth and context size to the model and tools available, with a scene-level quality-control loop.
 
-See [adaptive intelligence](skills/roblox-town-director/references/adaptive-intelligence.md) and [task decomposition](skills/roblox-town-director/references/task-decomposition.md) only if present in your local checkout; the current repository's reference set is listed below. 
+See [adaptive intelligence](skills/roblox-town-director/references/adaptive-intelligence.md) and [task decomposition](skills/roblox-town-director/references/task-decomposition.md).
 
 ### Story and cinematic direction
 
@@ -171,7 +171,7 @@ Run the automated tests from the repository root:
 python3 -m unittest discover -s tests -v
 ```
 
-The recorded-voice example project is in [`examples/recorded-voice-test-project/`](examples/recorded-voice-test-project/). It includes a synthetic fixture generator, a project voice manifest, and a README describing the sample workflow. External TTS execution is not part of this local backend.
+The recorded-voice example project is in [`examples/recorded-voice-test-project/README.md`](examples/recorded-voice-test-project/README.md). It includes a synthetic fixture generator, a project voice manifest, and a README describing the sample workflow. External TTS execution is not part of this local backend.
 
 ## Tests and verification
 
@@ -181,7 +181,7 @@ The `0.2.0-consolidated-r2` changelog records **82 passing automated tests** at 
 - 40 in `tests/test_voice_intelligence.py`
 - 34 in `tests/test_v020_production.py`
 
-Those are release-recorded results, not a claim that this README update reran the suite. The repository includes a GitHub Actions workflow at [`.github/workflows/ci.yml`](.github/workflows/ci.yml), but remote workflow execution remains unverified.
+Those are release-recorded results, not a claim that this README update reran the suite. No GitHub Actions workflow is currently present in the published repository, so remote CI execution has not been verified.
 
 The following release gates are still pending:
 
@@ -205,9 +205,11 @@ A production is only `COMPLETE` when a playable output exists and passes the del
 
 ```text
 .
-├── .github/workflows/ci.yml
 ├── assets/showcase/
 ├── examples/recorded-voice-test-project/
+│   ├── README.md
+│   ├── generate_synthetic_fixtures.py
+│   └── project-voice-manifest.json
 ├── integrations/
 ├── skills/
 │   └── roblox-town-director/
