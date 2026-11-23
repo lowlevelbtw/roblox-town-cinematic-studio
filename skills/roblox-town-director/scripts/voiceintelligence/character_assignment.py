@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Automatic Character Voice Assignment for Roblox Town Director.
 
 Reads scripts, identifies speaking characters, matches or assigns persistent
