@@ -1,162 +1,151 @@
-Roblox Town Cinematic Studio
+# Roblox Town Cinematic Studio
 
 <p align="center">
   <strong>One prompt. One directed production. One finished video.</strong>
-</p><p align="center">
-  An open-source, model-independent production skill for creating cinematic Roblox town, roleplay, and animated stories.
-</p><p align="center">
-  <img src="https://img.shields.io/badge/version-0.2.0--consolidated-blue" alt="Version 0.2.0"/>
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License"/>
-  <img src="https://img.shields.io/badge/python-3.9%2B-blue" alt="Python 3.9+"/>
-  <img src="https://img.shields.io/badge/status-active%20development-orange" alt="Active development"/>
-</p>---
+</p>
 
-What is Roblox Town Cinematic Studio?
+<p align="center">
+  An open-source Agent Skill for planning and coordinating cinematic Roblox town, roleplay, and animated stories.
+</p>
 
-Roblox Town Cinematic Studio is an AI-assisted production system built around one canonical skill: "roblox-town-director".
+<p align="center">
+  <img src="https://img.shields.io/badge/version-0.2.0--consolidated--r2-2563eb?style=flat-square" alt="Version 0.2.0-consolidated-r2">
+  <img src="https://img.shields.io/badge/license-MIT-16a34a?style=flat-square" alt="MIT License">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square" alt="Python 3.9+">
+  <img src="https://img.shields.io/badge/status-active%20development-d97706?style=flat-square" alt="Active development">
+</p>
 
-It coordinates specialized AI models and creative tools across storytelling, voice production, code-driven filmmaking, editing, quality control, and video packaging.
+---
 
-The goal is straightforward: make a complete Roblox story-production workflow possible without depending on one AI provider, one model, or one expensive editing application.
+## What is it?
 
-The project is hardware-independent by design. Actual execution still depends on the tools, permissions, and capabilities available in the active environment.
+**Roblox Town Cinematic Studio** is a model- and provider-independent production skill built around one canonical director: `roblox-town-director`.
 
-Showcase
+It helps coordinate the work involved in making a Roblox story: developing the premise, writing the script, planning scenes and shots, assigning character voices, preparing captions, assembling available media, checking the result, and packaging the video.
 
-A look at the visual direction and Roblox environments the project is designed to support.
+It is not a standalone video editor or a one-click Roblox capture application. It is an agent skill and a set of supporting scripts, templates, references, and tests. What it can actually execute depends on the tools and permissions available in the environment running it.
 
-Cinematic scene| Character storytelling
-"Roblox cinematic scene" (assets/showcase/dumpster-scene.jpg)| "Roblox character scene" (assets/showcase/street-camp-scene.jpg)
-"Roblox town environment" (assets/showcase/town-environment.jpg)| "Roblox action scene" (assets/showcase/action-scene.jpg)
+## Visual direction
 
-These images demonstrate visual direction, not proof of automated in-game capture or completed video rendering.
+The project is intended for character-led Roblox stories, town settings, roleplay scenes, and cinematic action. These images are visual examples supplied with the repository; they are not evidence that the project automatically captured or rendered the scenes.
 
-Core capabilities
+<p align="center">
+  <img src="assets/showcase/1795071258720.jpg" width="48%" alt="Roblox character cleaning a town dumpster">
+  <img src="assets/showcase/1795071262541.jpg" width="48%" alt="Roblox character camp scene with a police officer">
+</p>
+<p align="center">
+  <img src="assets/showcase/1795071267440.jpg" width="48%" alt="Nighttime Roblox town environment">
+  <img src="assets/showcase/1795071270852.jpg" width="48%" alt="Roblox character running through a town">
+</p>
 
-1. Intelligence routing
+## What it includes
 
-Routes production tasks to suitable models based on their capabilities rather than relying on a single provider.
+### Intelligence routing
 
-- 11 routing capabilities, including storytelling, research, coding, image generation, video generation, audio processing, and quality assessment.
-- Four routing modes: "AUTOMATIC", "MANUAL", "BUDGET", and "RESOURCE_EFFICIENT".
-- A six-step model-substitution recovery loop.
+The router selects models and tools by the capability a task needs, not by brand name alone. It defines 11 capability areas:
 
-See ""references/intelligence-router.md"" (skills/roblox-town-director/references/intelligence-router.md).
+- Creative reasoning, storytelling, and research
+- Coding, image generation, video generation, and 3D/animation
+- Text-to-speech, audio processing, video editing, and quality assessment
 
-2. Adaptive production planning
+Four routing modes are available: `AUTOMATIC`, `MANUAL`, `BUDGET`, and `RESOURCE_EFFICIENT`. The router distinguishes configured models from tools that are actually available and capabilities that have been experimentally verified.
 
-Breaks a production into a structured hierarchy:
+Start with [the intelligence router](skills/roblox-town-director/references/intelligence-router.md).
 
-"Film → Acts → Chapters → Sequences → Scenes → Shots → Assets"
+### Adaptive planning
 
-Three execution profiles are available:
+A production can be decomposed into a hierarchy:
 
-- "FRONTIER"
-- "BALANCED"
-- "RESOURCE_EFFICIENT"
+`Film → Acts → Chapters → Sequences → Scenes → Shots → Assets`
 
-The workflow also includes context slicing for smaller models and a five-step Scene QC Loop.
+The three execution profiles are `FRONTIER`, `BALANCED`, and `RESOURCE_EFFICIENT`. The skill adapts prompt depth and context size to the model and tools available, with a scene-level quality-control loop.
 
-3. Code-driven filmmaking
+See [adaptive intelligence](skills/roblox-town-director/references/adaptive-intelligence.md) and [task decomposition](skills/roblox-town-director/references/task-decomposition.md) only if present in your local checkout; the current repository's reference set is listed below. 
 
-Coordinates procedural production tools with generative AI assets.
+### Story and cinematic direction
 
-Supported production paths include:
+The directing guidance covers story structure, shot-scale variation, character blocking, environmental storytelling, lighting, continuity, editing rhythm, sound design, and the recurring **“In This Town…”** Shorts format.
 
-- FFmpeg and Python
+A production plan must identify which method it actually needs:
+
+1. Live gameplay staging
+2. Custom Roblox animation
+3. Hybrid or external production
+
+It must not assume that a particular Roblox experience has a prop, emote, vehicle, animation, or camera control. Unverified game features need an in-game check and a fallback.
+
+### Code-driven production
+
+Where the relevant tools are installed and available, the project can coordinate workflows using:
+
+- Python and FFmpeg
 - Roblox Studio and Luau
 - Blender and Python
 - Remotion
 
-Export verification is part of the production workflow. Tool availability and actual execution must be verified by the active environment.
+Supporting scripts cover caption rendering, video assembly, production state, and visual quality checks. The presence of a script does not mean that every environment can run it.
 
-4. Voice intelligence
+### Captions and video assembly
 
-The voice system lives in "scripts/voice_intelligence/".
+The caption system defines **16 styles**: 15 distinct ASS/FFmpeg presets (`C01`–`C15`) and `C16` Auto Adaptive. The production scripts also support multi-scene assembly, transitions, dialogue-aware background-music ducking, black-frame checks, and scene contact sheets.
 
-It includes:
+### Voice identity and continuity
 
-- Voice Profile Manager and Voice Design
-- Persistent character-to-voice assignment
-- Provider-independent adapter architecture
-- Resumable dialogue production
-- Audio quality checks
-- Consent-gated authorized voice-cloning interfaces
+Six internal voice IDs keep character assignments consistent when the selected provider changes.
 
-Important limitations: Remote voice cloning is disabled. Independent identity verification is not implemented ("independent_identity_verified: false"). Some provider adapters are contract-only or mock-tested; live provider API verification has not been completed.
+| ID | Voice profile | Intended use |
+|:--:|---|---|
+| V01 | My Reference Voice | Creator-selected primary narrator |
+| V02 | Mature Adult Male | Fathers, leaders, mentors, authority roles |
+| V03 | Teenage Boy | Teen protagonists and friends |
+| V04 | Mature Adult Female | Mothers, teachers, leaders, narrators |
+| V05 | Teenage Girl | Teen protagonists and friends |
+| V06 | Elder Storyteller | Grandparents and elder narration |
 
-5. Captioning and video assembly
+Voice rules are deliberately strict: V03 and V05 are fictional synthetic voices only, never clones of real minors. Private reference recordings and API credentials do not belong in a public repository.
 
-The production scripts include caption generation, video assembly, visual quality control, and audio/video processing.
+The code package is currently located at `skills/roblox-town-director/scripts/voiceintelligence/`. Remote voice cloning is disabled. The independent identity verification field remains `false`; some provider adapters are contract-only or mock-tested, and live provider verification is still pending.
 
-The automated production tests cover all 15 caption presets ("C01–C15") and "C16 Auto Adaptive", as well as multi-scene assembly, audio ducking, black-frame detection, contact sheets, and verification receipts.
+Provider configuration is documented in `skills/roblox-town-director/templates/voice-registry.json` and `project-voice-manifest.json`. Read the [voice provider adapter guide](skills/roblox-town-director/references/voice-provider-adapter.md) before changing provider bindings.
 
-6. Storytelling and cinematic continuity
+## Six operating modes
 
-Production guidance covers:
+| Mode | Use |
+|---|---|
+| `IDEA` | Develop and stress-test a story concept |
+| `SCRIPT` | Build the script and production plan |
+| `SHOOT` | Plan and coordinate scene production |
+| `POST` | Edit, assemble, and package available media |
+| `REVIEW` | Check quality, continuity, and delivery |
+| `FULL` | Coordinate the complete supported workflow |
 
-- The "In This Town..." Shorts format
-- Shot-scale variation and active blocking
-- Prop-state visual consistency
-- Flashback differentiation
-- 180-degree continuity
-- Caption safe margins
-- Cinematic direction and scene continuity
+## Platform guides
 
-Six-voice identity system
+There is one canonical skill at [`skills/roblox-town-director/SKILL.md`](skills/roblox-town-director/SKILL.md). Cloning the repository does not automatically install it into every AI client; each platform has its own discovery and import method.
 
-The internal voice IDs remain consistent when changing AI agents or TTS providers.
+| Platform | Guide |
+|---|---|
+| Claude Code | [Installation guide](integrations/claude-code.md) |
+| Claude App | [Installation guide](integrations/claude-app.md) |
+| OpenAI Codex | [Installation guide](integrations/codex.md) |
+| ChatGPT | [Usage guide](integrations/chatgpt.md) |
+| Gemini CLI | [Installation guide](integrations/gemini-cli.md) |
+| Google AI Studio | [Setup guide](integrations/ai-studio.md) |
 
-ID| Identity| Intended use
-V01| My Reference Voice| Creator-selected primary narrator
-V02| Mature Adult Male| Fathers, leaders, mentors
-V03| Teenage Boy| Teen protagonists and friends
-V04| Mature Adult Female| Mothers, teachers, narrators
-V05| Teenage Girl| Teen protagonists and friends
-V06| Elder Storyteller| Grandparents and elder narration
+These guides describe the intended integration path. Live end-to-end compatibility is not claimed unless the relevant guide explicitly records it as verified.
 
-Voice safety rules are part of the design. Teenage character voices must be fictional synthetic voices, never cloned from real minors. Private reference recordings and API credentials must never be committed to a public repository.
+## Run the local recorded-voice backend
 
-To configure a provider, review "templates/voice-registry.json", "templates/project-voice-manifest.json", and the provider adapter documentation before changing provider bindings.
+The optional local backend can import, validate, normalize, and assemble creator-supplied voice recordings without calling an external TTS API.
 
-Six operating modes
+**Requirements**
 
-Mode| Purpose
-"IDEA"| Develop and evaluate a story concept
-"SCRIPT"| Build the script and production plan
-"SHOOT"| Coordinate scene and shot production
-"POST"| Handle editing and packaging
-"REVIEW"| Evaluate production quality
-"FULL"| Coordinate the complete workflow
+- Python 3.9 or later
+- FFmpeg and FFprobe available on `PATH`
 
-Platform integrations
+Install FFmpeg using your platform's package manager:
 
-There is one canonical skill, located at:
-
-"skills/roblox-town-director/SKILL.md"
-
-Platform-specific installation and discovery mechanisms differ. Cloning this repository does not automatically install the skill into every AI application.
-
-Platform| Installation approach| Guide
-Claude Code| Native filesystem skill| "Guide" (integrations/claude-code.md)
-Claude App| Custom Skill ZIP or Projects alternative| "Guide" (integrations/claude-app.md)
-OpenAI Codex| Native ".agents/skills/"| "Guide" (integrations/codex.md)
-ChatGPT| Desktop skill, Project/GPT adapter, or plugin distribution| "Guide" (integrations/chatgpt.md)
-Gemini CLI| Native skill directories| "Guide" (integrations/gemini-cli.md)
-Google AI Studio| Manual system-instruction/API adapter| "Guide" (integrations/ai-studio.md)
-Other agents| Markdown fallback; compatibility unverified| Load "SKILL.md" and required references
-
-Optional: recorded voice backend
-
-The local recorded-voice backend can import, validate, normalize, and assemble creator-supplied voice recordings without requiring an external TTS API.
-
-Requirements
-
-- Python 3.9+
-- FFmpeg and FFprobe installed and available on "PATH"
-
-Install FFmpeg
-
+```bash
 # Debian / Ubuntu
 sudo apt-get install ffmpeg
 
@@ -166,81 +155,77 @@ brew install ffmpeg
 # Windows
 winget install Gyan.FFmpeg
 
-# Android Termux
+# Android (Termux)
 pkg install python ffmpeg
+```
 
-Run the backend
+Run the backend:
 
+```bash
 python skills/roblox-town-director/scripts/voice_backend.py
+```
 
-Run the regression tests
+Run the automated tests from the repository root:
 
+```bash
 python3 -m unittest discover -s tests -v
+```
 
-The recorded-voice example project is in ""examples/recorded-voice-test-project/"" (examples/recorded-voice-test-project/).
+The recorded-voice example project is in [`examples/recorded-voice-test-project/`](examples/recorded-voice-test-project/). It includes a synthetic fixture generator, a project voice manifest, and a README describing the sample workflow. External TTS execution is not part of this local backend.
 
-It includes synthetic fixture generation, a project voice manifest, and examples covering audio import, trimming, normalization, invalid-file rejection, missing-file handling, and timeline/SRT assembly.
+## Tests and verification
 
-External TTS execution is not implemented in this local backend.
+The `0.2.0-consolidated-r2` changelog records **82 passing automated tests** at release:
 
-Project structure
+- 8 in `tests/test_voice_backend.py`
+- 40 in `tests/test_voice_intelligence.py`
+- 34 in `tests/test_v020_production.py`
 
-roblox-town-cinematic-studio/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── examples/
-│   └── recorded-voice-test-project/
+Those are release-recorded results, not a claim that this README update reran the suite. The repository includes a GitHub Actions workflow at [`.github/workflows/ci.yml`](.github/workflows/ci.yml), but remote workflow execution remains unverified.
+
+The following release gates are still pending:
+
+- Full evaluation-suite execution
+- Model-tier and capability benchmarks
+- Live TTS provider verification
+- Physical Roblox filming validation
+- Remote GitHub Actions verification
+
+## Known limits
+
+- Physical Roblox gameplay capture and device control are not assumed.
+- Rendering requires the relevant software, binaries, and permissions to be available.
+- TTS adapters must be checked against the provider's real capabilities before use.
+- No model benchmark scores, provider IDs, or live execution results should be inferred from configuration files alone.
+- Unknown game mechanics and camera controls must be verified in the target experience.
+
+A production is only `COMPLETE` when a playable output exists and passes the delivery checks defined by the skill. Otherwise, the result must be reported as `INCOMPLETE` or `FAILED`.
+
+## Repository layout
+
+```text
+.
+├── .github/workflows/ci.yml
+├── assets/showcase/
+├── examples/recorded-voice-test-project/
 ├── integrations/
 ├── skills/
 │   └── roblox-town-director/
 │       ├── references/
 │       ├── templates/
 │       ├── scripts/
-│       │   └── voice_intelligence/
+│       │   ├── voice_backend.py
+│       │   └── voiceintelligence/
 │       ├── examples/
 │       └── evaluations/
 ├── tests/
-├── evaluations/
-│   └── caption-samples-rc10/
-├── assets/
-│   └── showcase/
 ├── CHANGELOG.md
 ├── LICENSE
 └── README.md
+```
 
-Verification status
+The caption evaluation samples are also present in the repository under `evalutions/captionsamples/` (the directory name is currently misspelled in the committed path).
 
-Version "0.2.0-consolidated" is built on the frozen "v0.1.1 RC6" baseline.
+## License
 
-The project defines 82 automated tests:
-
-- 8 tests in "test_voice_backend.py"
-- 40 tests in "test_voice_intelligence.py"
-- 34 tests in "test_v020_production.py"
-
-The test suite includes FFmpeg rendering and production-pipeline checks. These are defined test results in the project documentation; remote GitHub Actions execution has not yet been verified.
-
-The following remain pending:
-
-- Full evaluation-suite execution
-- Model-tier and capability benchmarks
-- Live TTS provider verification
-- Physical Roblox filming validation
-- Remote CI execution
-
-Do not interpret the presence of a workflow, adapter, or test as proof that its corresponding live service has been verified.
-
-Known limitations
-
-- Physical Roblox gameplay capture and device control are not assumed.
-- Media rendering requires available tools and permissions.
-- TTS providers are not interchangeable without checking their actual capabilities.
-- No model benchmark scores or live provider results are fabricated.
-- Unverified Roblox props, emotes, and camera controls must be checked in-game before being treated as supported.
-
-When a production stage is unavailable, the system should complete the stages it can support and report the blocked stages with practical alternatives.
-
-License
-
-Released under the "MIT License" (LICENSE).
+Released under the [MIT License](LICENSE).
