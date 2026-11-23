@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Multi-Scene Cinematic Assembler & Dialogue-Aware BGM Ducking (v0.2.0).
 
 Supports:
