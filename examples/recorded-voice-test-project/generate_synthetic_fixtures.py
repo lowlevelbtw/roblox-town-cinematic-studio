@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Generate synthetic tone fixtures locally for examples/recorded-voice-test-project/.
 
 Keeps the repository free of committed audio binaries and derived stems.
