@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Executable 16-Preset Caption System (C01-C16) for Roblox Town Director v0.2.0.
 
 Provides:
