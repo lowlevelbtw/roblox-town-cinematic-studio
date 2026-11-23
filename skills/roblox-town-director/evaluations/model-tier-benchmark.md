@@ -1,4 +1,4 @@
-# Model-Tier & Capability Benchmark Suite (`roblox-town-director` v0.1.1)
+# Model-Tier & Capability Benchmark Suite (`roblox-town-director` v0.2.0)
 
 *Status: **`[NOT RUN]`** across all profiles and capability tests. Do not record or fabricate scores until each test is actually executed on real outputs.*
 
