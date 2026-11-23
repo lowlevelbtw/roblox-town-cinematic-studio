@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """
 Recorded Voice Backend & Shared Voice Manager for Roblox Town Director.
 
