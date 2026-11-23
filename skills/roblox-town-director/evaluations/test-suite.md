@@ -1,6 +1,6 @@
 # Evaluation Test Suite (`roblox-town-director` v0.2.0)
 
-*Status: Scenarios 01–10 remain `NOT RUN` on the `v0.2.0` architecture. Scenarios 11–14 (Six-Voice Identity & Continuity System) have structural/schema checks verified, while live TTS generation tests remain `BLOCKED` (no TTS provider connected in this environment). Physical device filming validation also remains `NOT RUN`.*
+*Status: Scenarios 01–10 and 12–14 remain `NOT RUN` on the `v0.2.0` architecture. Scenario 11 has structural/schema checks recorded as validated, while live TTS generation remains `BLOCKED` (no TTS provider connected in this environment). Physical device filming validation also remains `NOT RUN`.*
 
 ## Evaluation Principles
 Judge each test by **storytelling intelligence, visual direction, honest capability-based production classification, voice identity/continuity discipline, and practical feasibility**—not mechanical template compliance:
