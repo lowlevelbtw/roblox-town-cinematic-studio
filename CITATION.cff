@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this project in your work, please cite it as below."
+title: "Roblox Town Cinematic Studio"
+authors:
+  - name: "RITVIK"
+    alias: "lowlevelbtw"
+version: "0.2.0"
+date-released: "2026-11-24"
+license: "MIT"
+repository-code: "https://github.com/lowlevelbtw/roblox-town-cinematic-studio"

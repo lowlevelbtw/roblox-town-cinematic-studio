@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/brand/icon.svg" alt="Roblox Town Cinematic Studio icon" width="112">
+
 # Roblox Town Cinematic Studio
 
 **A production director for cinematic Roblox stories.**
@@ -8,6 +10,8 @@ An open-source Agent Skill for developing stories, directing scenes, and coordin
 
 [![Version](https://img.shields.io/badge/version-0.2.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+Created and maintained by **RITVIK** · [Brand guide](assets/brand/brand-guide.md)
 
 </div>
 
@@ -108,7 +112,7 @@ The broader evaluation suite contains 14 scenarios. Most remain `NOT RUN`; live 
 
 ## Contributing
 
-Bug reports, focused improvements, documentation, and new evaluation cases are welcome. Please explain:
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow. Bug reports, focused improvements, documentation, and new evaluation cases are welcome. Please explain:
 
 1. The problem being addressed.
 2. The proposed change.
@@ -116,6 +120,18 @@ Bug reports, focused improvements, documentation, and new evaluation cases are w
 
 For code changes, run the relevant tests and report the actual results. Do not describe unrun tests or unverified integrations as passing.
 
+## Security
+
+Please follow [SECURITY.md](SECURITY.md) when reporting a vulnerability.
+
 ## License
 
 Released under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+**Roblox Town Cinematic Studio** · Created by **RITVIK**
+
+</div>

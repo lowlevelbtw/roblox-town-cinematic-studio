@@ -3,6 +3,7 @@ name: roblox-town-director
 description: Universal, hardware-independent Roblox storytelling, creative direction, and content-production director. Use when developing concepts, "In This Town..." rule-based Shorts, narrative architecture, characters, scripts, six-voice identity and continuity direction, intelligence-routed multi-model workflows, code-driven filmmaking, cinematic visual direction, scene and shot plans, adaptive task decomposition, production workflows, editing rhythm, sound design, or content packaging for Roblox town, roleplay, or animated Roblox stories.
 license: MIT
 metadata:
+  author: "RITVIK"
   version: "0.2.0"
 ---
 

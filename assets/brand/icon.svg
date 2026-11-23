@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">Roblox Town Cinematic Studio mark</title>
+<desc id="desc">A minimal cinematic viewfinder framing a geometric town in warm ivory and muted steel blue.</desc>
+<rect width="512" height="512" rx="88" fill="#0D1117"/>
+<path d="M104 190V126q0-22 22-22h78M408 190V126q0-22-22-22h-78M104 322v64q0 22 22 22h78M408 322v64q0 22-22 22h-78" fill="none" stroke="#F3EBDD" stroke-width="17" stroke-linecap="square"/>
+<circle cx="393" cy="123" r="17" fill="#7EA3BC"/>
+<path d="M128 291a128 128 0 0 1 256 0" fill="#486A83"/>
+<path d="M142 291h69v-34h42v34h-18v66h-93z" fill="#F3EBDD"/>
+<path d="M232 357V270l39-28 39 28v87h-78z" fill="#F3EBDD"/>
+<path d="M258 271h26v-31h-26z" fill="#F3EBDD"/>
+<path d="M271 240v-37" stroke="#F3EBDD" stroke-width="5"/>
+<path d="M273 205q23-12 39 0-15 14-39 5" fill="#F3EBDD"/>
+<path d="M322 292h49v65h-49z" fill="#F3EBDD"/>
+<path d="M339 310h10v13h-10zM354 310h10v13h-10z" fill="#0D1117"/>
+<path d="M130 366q73-35 145-9t107 5" fill="none" stroke="#F3EBDD" stroke-width="11" stroke-linecap="round"/>
+<path d="M167 361v-25m20 25v-18" stroke="#F3EBDD" stroke-width="8" stroke-linecap="round"/>
+<path d="M213 355h20v-13h-20z" fill="#0D1117"/>
+<path d="M245 402q44-28 89-3" fill="none" stroke="#7EA3BC" stroke-width="5" stroke-linecap="round"/>
+</svg>
