@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Authorized Voice Cloning Module for Roblox Town Director.
 
 SAFETY & VERIFICATION BOUNDARY (F-08):
