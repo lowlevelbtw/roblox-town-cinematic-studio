@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Provider-independent Voice Adapter System for Roblox Town Director.
 
 Implements:
