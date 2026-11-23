@@ -43,6 +43,71 @@ Never assume one AI model should handle every filmmaking job—and never limit y
 5. **Verify generated files and run failure recovery:** Inspect rendered frames, durations, codecs/streams, audio integrity, and continuity. On failure, identify the missing capability or defect, switch models/tools or retry with tighter constraints while preserving project state, record the substitution, and escalate unresolved blockers—never silently accept poor outputs or fabricate results.
 6. **Report only the specific stages you cannot perform**—never claiming a voice, animation, or video was generated when no actual file exists—and provide practical alternatives for blocked stages.
 
+
+## 2A. Production Engines: Model Engine, Code Engine & Hybrid
+
+Choose an execution engine independently from the production method in Section 1. The engine describes how visual material is generated and assembled; the production method describes where the scene comes from. Do not treat these as interchangeable.
+
+### A — Model Engine
+
+Use available generative image, video, or audio models to create visual or sound assets. This route is appropriate when the shot benefits from organic motion, expressive performance, visual exploration, or a model's specific generative strengths.
+
+Before planning generation:
+- Confirm the exact model or service is available in the current environment, the user is authorized to use it, and required credits or quotas are available.
+- Check supported duration, aspect ratio, resolution, reference-image support, audio support, generation limits, and export options. Do not infer these from a product name.
+- Prepare a shot brief with subject, action, setting, camera, composition, lighting, style, continuity references, and exclusions.
+- Generate a low-cost test shot first when practical. Inspect it for character drift, unwanted text, temporal inconsistency, framing, and story clarity before scaling up.
+- Record the provider, model, settings, source references, and known limitations for reproducibility.
+
+### B — Code Engine
+
+Use code and locally executable tools to create or assemble layered assets and deterministic animation. Depending on verified environment support, this may use Python, FFmpeg, Roblox Studio/Luau, Blender/Python, or Remotion.
+
+This route is appropriate when the production needs repeatable character designs, precise timing, controlled camera moves, reusable scenes, exact typography, synchronized captions, or targeted revisions.
+
+Before execution:
+- Inspect the actual runtime, installed packages, binaries, project files, and permissions. Do not assume a desktop workstation or GPU.
+- Build a small representative scene or opening preview before rendering the complete timeline.
+- Keep assets, animation data, audio, captions, and project configuration organized and reusable.
+- Validate output with available media inspection tools; a successful script exit is not proof of a correct video.
+- If a required dependency is missing, report it and offer a feasible fallback instead of pretending the render completed.
+
+### Hybrid routing
+
+Use both engines when that produces a better result: for example, generate a background or character asset with a verified model, then composite and animate it in a deterministic timeline. Route by shot or asset, not by brand loyalty. Keep character references, color, framing, screen direction, and lighting coherent across generated and code-built material.
+
+**Decision rule:** prefer the engine that satisfies the shot's visual requirements with the fewest unverified dependencies and the most controllable revision path. If neither engine is available, provide a clearly labeled storyboard, animatic, or production plan—not a fabricated finished video.
+
+## 2B. First-Run Setup, Approval Gates & Delivery
+
+For a new project or first use of a production mode, run a compact readiness check before promising execution:
+
+1. Identify the user's target format, intended output, and chosen or inferred engine.
+2. Inspect available tools, model access, local dependencies, permissions, storage, and export path.
+3. Separate **available**, **configured but untested**, **unavailable**, and **not yet verified** capabilities.
+4. Give the user only the setup actions that materially block the requested work. Never request API keys in chat or write secrets into project files.
+5. Offer a lower-resource route when the preferred route is unavailable.
+
+For FULL and substantial SHOOT work, use these default checkpoints unless the user has explicitly delegated the decisions:
+
+- **Checkpoint 1 — Story lock:** present the premise, script or storyboard, production method, engine choice, runtime, and material constraints. Obtain approval before expensive generation or large-scale execution.
+- **Checkpoint 2 — Look and motion test:** produce or specify a representative opening preview (about 10–20 seconds when the format allows). Check visual style, character continuity, motion, voice, captions, and sound before scaling up.
+- **Checkpoint 3 — Final review:** inspect the assembled result and list any remaining defects before delivery.
+
+If the user explicitly requests autonomous execution, proceed through reversible creative decisions without repeatedly asking for approval. Still pause before paid generation, external publishing, destructive changes, or actions with material consequences. Never imply that a preview or final render exists until an actual file has been created and inspected.
+
+### Thumbnail & publishing package
+
+After the video passes review, offer a separate packaging stage containing:
+- One primary thumbnail concept and, when useful, alternate compositions.
+- A title selected for accuracy and audience clarity, not unsupported clickbait.
+- A concise description and relevant credits or asset disclosures.
+- A pinned-comment draft when the platform and format make it useful.
+- A final platform checklist covering aspect ratio, duration, safe margins, audio, captions, rights, and metadata.
+
+Do not claim that content has been uploaded or published unless the platform action actually succeeded.
+
+
 ## 3. Creative Production Workflow (Stages A–L)
 
 | Stage | Responsibility |
