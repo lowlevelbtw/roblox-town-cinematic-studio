@@ -2,7 +2,7 @@
 
 All notable changes to `roblox-town-cinematic-studio` / `roblox-town-director` are documented in this file.
 
-## [0.2.0-consolidated-r2] - 2026-11-23
+## [0.2.0] - 2026-11-23
 *Built on frozen `v0.1.1` RC6 baseline on feature branch `feature/one-prompt-autopilot-v0.2.0`.*
 
 ### One Prompt → One Finished Video (`v0.2.0`)
