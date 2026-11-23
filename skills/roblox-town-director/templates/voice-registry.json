@@ -1,0 +1,242 @@
+{
+  "schema_version": "1.0.0",
+  "project": "roblox-town-cinematic-studio",
+  "skill": "roblox-town-director",
+  "notes": "Canonical six-voice identity registry. Internal voice_id values (V01-V06) are permanent and must never change when switching providers. Private reference audio files must remain in private project storage and must not be committed to public repositories.",
+  "voices": [
+    {
+      "voice_id": "V01",
+      "voice_name": "My Reference Voice",
+      "character_category": "creator_reference_narrator_lead",
+      "description": "Creator-selected reference voice anchored to three supplied MP4 reference clips. Intended for primary narration or lead storytelling roles where natural rhythm and pronunciation continuity are required.",
+      "intended_roles": [
+        "Primary narrator",
+        "In This Town... storyteller",
+        "Lead first-person voiceover"
+      ],
+      "accent_and_pronunciation_profile": "American English pronunciation observed across all three supplied clips; exact regional dialect not forensically assessed.",
+      "pitch_and_vocal_texture_profile": "Young-adult male vocal register with crisp, energetic projection observed in reference clips; numerical pitch (Hz) not assessed.",
+      "speaking_pace": "Brisk, high-retention Shorts cadence in supplied clips; slows slightly for suspense or emotional reveals.",
+      "rhythm_and_pause_behaviour": "Tight clause-to-clause transitions with minimal dead air; uses brief pre-twist pauses (e.g., ~0.4s pause observed at 0:50.3-0:50.7 in 1000015040.mp4) and emphatic punch on reveal lines.",
+      "emotional_delivery_range": "Wide expressive range observed in 1000015041.mp4 (conversational setup, comedic beats, urgent shouting, heartfelt reveal; LRA 3.7 LU); suspenseful urgency in 1000015040.mp4; dry/deadpan comedy in 1000015039.mp4.",
+      "reference_material": {
+        "storage_policy": "private_storage_only_do_not_publish",
+        "primary_reference": {
+          "filename": "1000015041.mp4",
+          "private_path_placeholder": "PRIVATE_STORAGE/voice_references/V01/1000015041.mp4",
+          "selection_reason": "Highest audio bitrate (128.0 kbps AAC, 44.1 kHz), 0 clipped samples, longest usable narrator speech (99.73s), and widest observed emotional range (LRA 3.7 LU)."
+        },
+        "supporting_references": [
+          {
+            "filename": "1000015040.mp4",
+            "private_path_placeholder": "PRIVATE_STORAGE/voice_references/V01/1000015040.mp4",
+            "role": "Supporting suspense/horror delivery reference (58.68s, 128.1 kbps AAC, 0 clipped samples, -0.2 dBFS peak)."
+          },
+          {
+            "filename": "1000015039.mp4",
+            "private_path_placeholder": "PRIVATE_STORAGE/voice_references/V01/1000015039.mp4",
+            "role": "Supporting deadpan comedy pacing reference (33.90s, lower 48.1 kbps AAC bitrate, 7 clipped samples at +1.0 dBFS peak)."
+          }
+        ],
+        "quality_and_preprocessing_notes": "All three files are finished video mixes with baked-in background music and SFX; 1000015040.mp4 and 1000015041.mp4 also contain brief secondary character lines. Vocal isolation and single-speaker trimming are required before provider reference upload. Forensic same-speaker identity across all three clips is unverified (1000015040.mp4 and 1000015041.mp4 sound closely consistent; 1000015039.mp4 has heavier compression)."
+      },
+      "provider_binding": {
+        "provider_name": "UNASSIGNED",
+        "provider_voice_id": null,
+        "generation_settings": "provider dependent"
+      },
+      "safety_and_consent": {
+        "voice_type": "reference_based_requires_authorization",
+        "policy_check_required": true,
+        "notes": "Verify creator ownership/authorization, provider eligibility, consent, and age requirements before enabling reference-based generation."
+      },
+      "status": "REFERENCE_ASSESSED_PROVIDER_UNBOUND",
+      "verification_history": [
+        {
+          "date": "2026-11-19",
+          "event": "Stage 2 acoustic and perceptual inspection of 1000015039.mp4, 1000015040.mp4, and 1000015041.mp4 completed; primary reference selected as 1000015041.mp4. Live voice generation NOT RUN (no TTS provider connected)."
+        }
+      ]
+    },
+    {
+      "voice_id": "V02",
+      "voice_name": "Mature Adult Male",
+      "character_category": "adult_male",
+      "description": "Mature, composed, natural, distinctive, and confident adult male voice for authority, mentorship, and grounded dramatic roles. Avoids exaggerated movie-trailer delivery.",
+      "intended_roles": [
+        "Adult male characters",
+        "Fathers",
+        "Leaders",
+        "Mentors",
+        "Authority figures",
+        "Historical characters"
+      ],
+      "accent_and_pronunciation_profile": "provider dependent",
+      "pitch_and_vocal_texture_profile": "not assessed",
+      "speaking_pace": "Measured, steady conversational pace; unhurried authority.",
+      "rhythm_and_pause_behaviour": "Controlled phrasing with deliberate pauses before key decisions or warnings.",
+      "emotional_delivery_range": "Calm warmth, firm authority, restrained concern, quiet resolve.",
+      "reference_material": null,
+      "provider_binding": {
+        "provider_name": "UNASSIGNED",
+        "provider_voice_id": null,
+        "generation_settings": "provider dependent"
+      },
+      "safety_and_consent": {
+        "voice_type": "synthetic_or_licensed_stock",
+        "policy_check_required": true,
+        "notes": "Use only licensed synthetic or provider-cleared voices; do not imitate identifiable real people."
+      },
+      "status": "DEFINED_PROVIDER_UNBOUND",
+      "verification_history": [
+        {
+          "date": "2026-11-19",
+          "event": "Voice profile defined; provider binding and audio sample generation NOT RUN."
+        }
+      ]
+    },
+    {
+      "voice_id": "V03",
+      "voice_name": "Teenage Boy",
+      "character_category": "teenage_male_fictional_synthetic",
+      "description": "Youthful, natural, conversational, emotionally expressive fictional synthetic voice for teen male protagonists and peers. Avoids sounding like an adult pretending to be a teenager.",
+      "intended_roles": [
+        "Teenage protagonists",
+        "Friends",
+        "School characters",
+        "Young male supporting characters"
+      ],
+      "accent_and_pronunciation_profile": "provider dependent",
+      "pitch_and_vocal_texture_profile": "not assessed",
+      "speaking_pace": "Natural conversational to brisk reactive pace.",
+      "rhythm_and_pause_behaviour": "Agile, spontaneous phrasing with quick reactive beats and natural hesitations.",
+      "emotional_delivery_range": "Curiosity, humor, nervous tension, loyalty, earnest vulnerability.",
+      "reference_material": null,
+      "provider_binding": {
+        "provider_name": "UNASSIGNED",
+        "provider_voice_id": null,
+        "generation_settings": "provider dependent"
+      },
+      "safety_and_consent": {
+        "voice_type": "fictional_synthetic_only",
+        "policy_check_required": true,
+        "notes": "MANDATORY SAFETY RULE: Must be a fictional synthetic voice. Never clone real minors or imitate identifiable people."
+      },
+      "status": "DEFINED_PROVIDER_UNBOUND",
+      "verification_history": [
+        {
+          "date": "2026-11-19",
+          "event": "Voice profile defined with mandatory fictional-synthetic safety lock; provider binding and audio generation NOT RUN."
+        }
+      ]
+    },
+    {
+      "voice_id": "V04",
+      "voice_name": "Mature Adult Female",
+      "character_category": "adult_female",
+      "description": "Mature, warm, confident, natural, and emotionally controlled adult female voice suited for maternal, leadership, teaching, and narrative roles.",
+      "intended_roles": [
+        "Adult female characters",
+        "Mothers",
+        "Teachers",
+        "Leaders",
+        "Narrators",
+        "Supporting characters"
+      ],
+      "accent_and_pronunciation_profile": "provider dependent",
+      "pitch_and_vocal_texture_profile": "not assessed",
+      "speaking_pace": "Clear, balanced conversational pace with articulate phrasing.",
+      "rhythm_and_pause_behaviour": "Composed cadence with warm, natural breath pauses and controlled emphasis.",
+      "emotional_delivery_range": "Warm reassurance, calm leadership, firm boundaries, understated tension.",
+      "reference_material": null,
+      "provider_binding": {
+        "provider_name": "UNASSIGNED",
+        "provider_voice_id": null,
+        "generation_settings": "provider dependent"
+      },
+      "safety_and_consent": {
+        "voice_type": "synthetic_or_licensed_stock",
+        "policy_check_required": true,
+        "notes": "Use only licensed synthetic or provider-cleared voices; do not imitate identifiable real people."
+      },
+      "status": "DEFINED_PROVIDER_UNBOUND",
+      "verification_history": [
+        {
+          "date": "2026-11-19",
+          "event": "Voice profile defined; provider binding and audio sample generation NOT RUN."
+        }
+      ]
+    },
+    {
+      "voice_id": "V05",
+      "voice_name": "Teenage Girl",
+      "character_category": "teenage_female_fictional_synthetic",
+      "description": "Youthful, natural, conversational, and expressive fictional synthetic voice for teen female protagonists and peers. Avoids exaggerated or stereotypical delivery.",
+      "intended_roles": [
+        "Teenage protagonists",
+        "Friends",
+        "School characters",
+        "Young female supporting characters"
+      ],
+      "accent_and_pronunciation_profile": "provider dependent",
+      "pitch_and_vocal_texture_profile": "not assessed",
+      "speaking_pace": "Natural conversational pace adapting cleanly to comedic or emotional shifts.",
+      "rhythm_and_pause_behaviour": "Expressive everyday phrasing with responsive turn-taking and unforced pauses.",
+      "emotional_delivery_range": "Witty skepticism, warmth, urgency, quiet empathy, determination.",
+      "reference_material": null,
+      "provider_binding": {
+        "provider_name": "UNASSIGNED",
+        "provider_voice_id": null,
+        "generation_settings": "provider dependent"
+      },
+      "safety_and_consent": {
+        "voice_type": "fictional_synthetic_only",
+        "policy_check_required": true,
+        "notes": "MANDATORY SAFETY RULE: Must be a fictional synthetic voice. Never clone real minors or imitate identifiable people."
+      },
+      "status": "DEFINED_PROVIDER_UNBOUND",
+      "verification_history": [
+        {
+          "date": "2026-11-19",
+          "event": "Voice profile defined with mandatory fictional-synthetic safety lock; provider binding and audio generation NOT RUN."
+        }
+      ]
+    },
+    {
+      "voice_id": "V06",
+      "voice_name": "Elder Storyteller",
+      "character_category": "elder_senior",
+      "description": "Older-sounding, thoughtful, slightly textured, calm, and distinctive voice for elders, wise mentors, and flashback narration. Avoids caricatured elderly speech.",
+      "intended_roles": [
+        "Grandparents",
+        "Village elders",
+        "Historical storytellers",
+        "Wise characters",
+        "Flashback narration"
+      ],
+      "accent_and_pronunciation_profile": "provider dependent",
+      "pitch_and_vocal_texture_profile": "slightly textured target; exact acoustic profile not assessed",
+      "speaking_pace": "Unhurried, reflective storytelling pace.",
+      "rhythm_and_pause_behaviour": "Deliberate, unhurried cadence with reflective pauses that give weight to lore and memories.",
+      "emotional_delivery_range": "Warm wisdom, quiet gravity, gentle humor, nostalgic reflection.",
+      "reference_material": null,
+      "provider_binding": {
+        "provider_name": "UNASSIGNED",
+        "provider_voice_id": null,
+        "generation_settings": "provider dependent"
+      },
+      "safety_and_consent": {
+        "voice_type": "synthetic_or_licensed_stock",
+        "policy_check_required": true,
+        "notes": "Use only licensed synthetic or provider-cleared voices; do not imitate identifiable real people."
+      },
+      "status": "DEFINED_PROVIDER_UNBOUND",
+      "verification_history": [
+        {
+          "date": "2026-11-19",
+          "event": "Voice profile defined; provider binding and audio sample generation NOT RUN."
+        }
+      ]
+    }
+  ]
+}

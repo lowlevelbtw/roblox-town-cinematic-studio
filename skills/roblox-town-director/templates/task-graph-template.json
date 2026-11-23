@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "EXAMPLE_PROJECT_ID",
+  "project_title": "Replace with project title",
+  "execution_profile": "FRONTIER | BALANCED | RESOURCE_EFFICIENT",
+  "hierarchy_levels": [
+    "film",
+    "act",
+    "chapter",
+    "sequence",
+    "scene",
+    "shot",
+    "asset"
+  ],
+  "tasks": [
+    {
+      "task_id": "S01_PLAN",
+      "parent_id": "PROJECT_ROOT",
+      "level": "scene",
+      "recommended_profile": "BALANCED",
+      "required_inputs": [
+        "approved_script_beat_S01",
+        "locked_character_wardrobe_S01",
+        "project-voice-manifest.json"
+      ],
+      "expected_output": "Shot breakdown for Scene 1 with distinct angles, blocking, lighting, transitions, and caption blocks",
+      "dependencies": [],
+      "validation_criteria": [
+        "No two consecutive shots repeat identical camera angle and distance without dramatic motivation",
+        "All speakers map to locked internal voice IDs (V01-V06)",
+        "Captions form complete readable clauses within safe margins"
+      ],
+      "retry_policy": {
+        "max_retries": 2,
+        "on_retry": "Narrow scope to one shot at a time and inject explicit angle/distance constraints"
+      },
+      "status": "pending",
+      "failure_log": []
+    },
+    {
+      "task_id": "S01_SH01_VISUAL",
+      "parent_id": "S01_PLAN",
+      "level": "shot",
+      "recommended_profile": "RESOURCE_EFFICIENT",
+      "required_inputs": [
+        "S01_PLAN:SH01_spec",
+        "locked_character_wardrobe_S01",
+        "location_lighting_lock_S01"
+      ],
+      "expected_output": "Verified keyframe image or video clip for S01_SH01",
+      "dependencies": [
+        "S01_PLAN"
+      ],
+      "validation_criteria": [
+        "Matches locked wardrobe and environment details",
+        "Clear focal emphasis and depth staging",
+        "No unintended text artifacts or framing distortion"
+      ],
+      "retry_policy": {
+        "max_retries": 2,
+        "on_retry": "Lock prior approved reference frame and simplify scene prompt to one primary action"
+      },
+      "status": "pending",
+      "failure_log": []
+    },
+    {
+      "task_id": "S01_L01_VOICE",
+      "parent_id": "S01_PLAN",
+      "level": "asset",
+      "recommended_profile": "RESOURCE_EFFICIENT",
+      "required_inputs": [
+        "project-voice-manifest.json:S01_L01",
+        "voice-registry.json:V01"
+      ],
+      "expected_output": "Speaker-separated audio asset for S01_L01 or explicit BLOCKED report if no TTS provider is connected",
+      "dependencies": [
+        "S01_PLAN"
+      ],
+      "validation_criteria": [
+        "Uses locked voice_id without silent substitution",
+        "Zero clipping and clear speech intelligibility"
+      ],
+      "retry_policy": {
+        "max_retries": 1,
+        "on_retry": "Adjust pacing/punctuation cue or escalate as BLOCKED if provider capability is unavailable"
+      },
+      "status": "pending",
+      "failure_log": []
+    }
+  ]
+}

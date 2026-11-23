@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "project": "roblox-town-cinematic-studio",
+  "skill": "roblox-town-director",
+  "routing_mode": "AUTOMATIC",
+  "supported_routing_modes": [
+    "AUTOMATIC",
+    "MANUAL",
+    "BUDGET",
+    "RESOURCE_EFFICIENT"
+  ],
+  "notes": "Distinguish runtime-discovered models, manually configured models, available tools, and experimentally verified capabilities. Never select a model or provider merely because it appears in this registry. If runtime discovery is unavailable, configure entries manually and keep unchecked capabilities marked 'UNVERIFIED'. Never invent performance scores, context limits, or costs.",
+  "manual_overrides": {
+    "creative_reasoning": null,
+    "storytelling": null,
+    "research": null,
+    "coding": null,
+    "image_generation": null,
+    "video_generation": null,
+    "3d_and_animation": null,
+    "text_to_speech": null,
+    "audio_processing": null,
+    "video_editing": null,
+    "quality_assessment": null
+  },
+  "models": [
+    {
+      "model_id": "EXAMPLE_PRIMARY_AGENT",
+      "provider": "UNASSIGNED",
+      "entry_source": "manually_configured",
+      "execution_profile": "UNVERIFIED",
+      "task_capabilities": {
+        "creative_reasoning": "UNVERIFIED",
+        "storytelling": "UNVERIFIED",
+        "research": "UNVERIFIED",
+        "coding": "UNVERIFIED",
+        "image_generation": "UNVERIFIED",
+        "video_generation": "UNVERIFIED",
+        "3d_and_animation": "UNVERIFIED",
+        "text_to_speech": "UNVERIFIED",
+        "audio_processing": "UNVERIFIED",
+        "video_editing": "UNVERIFIED",
+        "quality_assessment": "UNVERIFIED"
+      },
+      "context_limit": "UNVERIFIED",
+      "multimodal_support": {
+        "image_input": "UNVERIFIED",
+        "video_input": "UNVERIFIED",
+        "audio_input": "UNVERIFIED",
+        "image_output": "UNVERIFIED",
+        "video_output": "UNVERIFIED",
+        "audio_output": "UNVERIFIED"
+      },
+      "available_tools": [],
+      "coding_capability": "UNVERIFIED",
+      "creative_capability": "UNVERIFIED",
+      "cost_profile": "UNVERIFIED",
+      "latency_profile": "UNVERIFIED",
+      "reliability_evidence": [],
+      "availability": "UNVERIFIED"
+    }
+  ]
+}

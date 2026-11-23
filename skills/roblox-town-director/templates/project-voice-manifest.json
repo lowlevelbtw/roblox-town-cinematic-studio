@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "EXAMPLE_PROJECT_ID",
+  "project_title": "Replace with project or series title",
+  "format": "short | episode | mini_movie | documentary | feature",
+  "registry_source": "skills/roblox-town-director/templates/voice-registry.json",
+  "active_provider": {
+    "adapter_id": "UNASSIGNED",
+    "provider_name": "UNASSIGNED",
+    "verified_capabilities": {
+      "text_to_speech": "unknown",
+      "voice_reference_input": "unknown",
+      "authorized_voice_cloning": "unknown",
+      "custom_voice_creation": "unknown",
+      "emotion_delivery_controls": "unknown",
+      "pronunciation_dictionaries": "unknown",
+      "speech_speed_controls": "unknown",
+      "audio_file_export": "unknown",
+      "batch_generation": "unknown",
+      "persistent_voice_ids": "unknown"
+    }
+  },
+  "character_voice_map": [
+    {
+      "character_id": "narrator_main",
+      "display_name": "Main Narrator",
+      "voice_id": "V01",
+      "provider_voice_id": null,
+      "lock_scope": "series_wide",
+      "pronunciation_notes": []
+    }
+  ],
+  "dialogue_assets": [
+    {
+      "scene_id": "S01",
+      "line_id": "S01_L01",
+      "character_id": "narrator_main",
+      "voice_id": "V01",
+      "delivery_cue": "Conversational hook",
+      "status": "pending",
+      "audio_asset_ref": null,
+      "locked_from_regeneration": false
+    }
+  ],
+  "resume_checkpoint": {
+    "last_completed_line_id": null,
+    "next_pending_line_id": "S01_L01",
+    "blockers": []
+  }
+}
