@@ -1,4 +1,6 @@
 """Modular Voice Intelligence & Authorized Cloning Package for Roblox Town Director."""
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
+
 
 from .audio_qc import inspect_audio_file, inspect_video_file, run_project_audio_qc
 from .character_assignment import (
