@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/brand/icon.svg" alt="Roblox Town Cinematic Studio icon" width="112">
+<img src="assets/brand/hero.svg" alt="Roblox Town Cinematic Studio — Stories, directed. Production, considered." width="100%">
 
 # Roblox Town Cinematic Studio
 
@@ -11,7 +11,7 @@ An open-source Agent Skill for developing stories, directing scenes, and coordin
 [![Version](https://img.shields.io/badge/version-0.2.0-blue)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Created and maintained by **RITVIK** · [Brand guide](assets/brand/brand-guide.md)
+Created and maintained by **RITVIK** · [Brand guide](assets/brand/brand-guide.md) · [Project provenance](PROVENANCE.md)
 
 </div>
 
@@ -123,6 +123,10 @@ For code changes, run the relevant tests and report the actual results. Do not d
 ## Security
 
 Please follow [SECURITY.md](SECURITY.md) when reporting a vulnerability.
+
+## Project identity
+
+The project includes an editable [icon](assets/brand/icon.svg), [wordmark](assets/brand/logo.svg), [skill badge](assets/brand/skill-badge.svg), and [brand guide](assets/brand/brand-guide.md). See [PROVENANCE.md](PROVENANCE.md) for the maintainer attribution record.
 
 ## License
 
