@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Persistent Per-Scene Production State, Recovery, Resource Check & Final Delivery Gate (v0.2.0).
 
 Fixes:
