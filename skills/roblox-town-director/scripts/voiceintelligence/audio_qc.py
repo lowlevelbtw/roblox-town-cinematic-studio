@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Automated Audio & Media Quality Control Module for Roblox Town Director.
 
 Uses FFprobe and FFmpeg to validate technical audio integrity, duration, sample
