@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Voice Design Module for Roblox Town Director.
 
 Creates original synthetic voice profiles from descriptive specifications while
