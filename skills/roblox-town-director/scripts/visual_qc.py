@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Visual Quality Control Module for Roblox Town Director v0.2.0.
 
 Provides:
