@@ -152,6 +152,8 @@ There is one canonical skill at [`skills/roblox-town-director/SKILL.md`](skills/
 | ChatGPT | [Usage guide](integrations/chatgpt.md) |
 | Gemini CLI | [Installation guide](integrations/gemini-cli.md) |
 | Google AI Studio | [Setup guide](integrations/ai-studio.md) |
+| Google Antigravity | [Installation guide](integrations/antigravity.md) |
+| Agent Skills CLI (Claude Code, Codex, Antigravity) | [Cross-agent installer guide](integrations/agent-skills-cli.md) |
 
 These guides describe the intended integration path. Live end-to-end compatibility is not claimed unless the relevant guide explicitly records it as verified.
 
