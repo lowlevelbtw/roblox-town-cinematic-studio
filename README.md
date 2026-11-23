@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.2.0--consolidated--r2-2563eb?style=flat-square" alt="Version 0.2.0-consolidated-r2">
+  <img src="https://img.shields.io/badge/version-0.2.0-2563eb?style=flat-square" alt="Version 0.2.0">
   <img src="https://img.shields.io/badge/license-MIT-16a34a?style=flat-square" alt="MIT License">
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/status-active%20development-d97706?style=flat-square" alt="Active development">
@@ -38,6 +38,46 @@ npx skills update roblox-town-director
 ```
 
 The Skills CLI installs the Agent Skill files; it does **not** install Roblox Studio, FFmpeg, Blender, video-generation services, API credentials, or other production dependencies. Google AI Studio does not use this local skill installer; follow the [AI Studio setup guide](integrations/ai-studio.md). See the [cross-agent installer guide](integrations/agent-skills-cli.md) for details and limitations.
+
+## Quickstart
+
+### Step 1 — Get the skill
+
+Clone the repository:
+
+```bash
+git clone https://github.com/lowlevelbtw/roblox-town-cinematic-studio.git
+cd roblox-town-cinematic-studio
+```
+
+Or install the canonical skill directly with the Skills CLI using the command above.
+
+### Step 2 — Confirm the agent can read it
+
+Ask your agent to inspect `skills/roblox-town-director/SKILL.md` and the references relevant to your task. If you installed through the CLI, invoke `roblox-town-director` or ask the agent to use the installed skill. Do not assume that skill installation also installs production software or grants access to external models.
+
+### Step 3 — Try a first project
+
+Start with a focused concept request:
+
+```text
+IDEA
+
+Develop three original concepts for a 60-second Roblox town Short.
+
+Evaluate each for:
+- Opening hook
+- Character goal and conflict
+- Escalation and visual storytelling
+- Ending payoff
+- Production feasibility
+
+Challenge weak concepts instead of praising them automatically.
+Recommend the strongest concept and explain why.
+```
+
+When ready, move to `SCRIPT`, `SHOOT`, `POST`, `REVIEW`, or `FULL`. The six modes are documented below. For a complete project, `FULL` coordinates the supported workflow while preserving the skill's capability checks and approval boundaries.
+
 ## What is it?
 
 **Roblox Town Cinematic Studio** is a model- and provider-independent production skill built around one canonical director: `roblox-town-director`.
@@ -129,6 +169,34 @@ The code package is currently located at `skills/roblox-town-director/scripts/vo
 
 Provider configuration is documented in `skills/roblox-town-director/templates/voice-registry.json` and `project-voice-manifest.json`. Read the [voice provider adapter guide](skills/roblox-town-director/references/voice-provider-adapter.md) before changing provider bindings.
 
+## Quality control
+
+Every substantial project is reviewed through two independent gates. A strong story is not automatically a feasible production, and technically feasible production is not automatically a compelling story.
+
+### Gate A — Story and creative quality
+
+- Opening hook and audience interest
+- Character motivation and clarity of the central goal
+- Conflict, escalation, and payoff
+- Visual storytelling rather than exposition
+- Emotional or comedic effect appropriate to the intended genre
+
+### Gate B — Production feasibility
+
+- Actually available tools, models, permissions, and hardware
+- Production-method and engine fit
+- Scene complexity, cast, camera, locations, and asset requirements
+- Runtime, rendering, storage, and other technical constraints
+- A practical lower-resource fallback
+
+Each gate receives one verdict:
+
+- `STRONG` — meets the requirements without a material unresolved weakness.
+- `NEEDS WORK` — viable after specific revisions or a smaller scope.
+- `FAIL` — the current concept or production plan should not proceed unchanged.
+
+Report both verdicts separately with concise evidence and next actions. Never let a strong result in one gate conceal a failure in the other. Apply this review in `IDEA`, `SCRIPT`, `SHOOT`, and `FULL` at the level appropriate to the request; run the Stage L delivery check before calling a production complete.
+
 ## Six operating modes
 
 | Mode | Use |
@@ -196,9 +264,25 @@ python3 -m unittest discover -s tests -v
 
 The recorded-voice example project is in [`examples/recorded-voice-test-project/README.md`](examples/recorded-voice-test-project/README.md). It includes a synthetic fixture generator, a project voice manifest, and a README describing the sample workflow. External TTS execution is not part of this local backend.
 
+## Evaluation and validation
+
+The repository includes **14 evaluation scenarios** plus separate model-tier and voice-intelligence acceptance suites. These are test specifications, not proof that the complete skill has passed live evaluation.
+
+The 14-scenario suite covers:
+- Creative judgment and story development
+- Visual direction and cinematic staging
+- Production-method classification and feasibility
+- Hardware independence and practical alternatives
+- Technical honesty when tools or providers are unavailable
+- Six-voice identity, continuity, provider migration, and minor-safety boundaries
+
+**Current status:** Scenarios 01–10 and 12–14 are `NOT RUN`. Scenario 11 has structural/schema checks recorded as validated, but live TTS generation remains `BLOCKED` without a connected provider. Physical device filming validation remains `NOT RUN`. Model-tier benchmarks remain `NOT RUN`; do not infer scores from configuration or mock tests.
+
+See the [14-scenario evaluation suite](skills/roblox-town-director/evaluations/test-suite.md), [model-tier benchmark suite](skills/roblox-town-director/evaluations/model-tier-benchmark.md), and [voice-intelligence acceptance criteria](skills/roblox-town-director/evaluations/voice-intelligence-acceptance.md).
+
 ## Tests and verification
 
-The `0.2.0-consolidated-r2` changelog records **82 passing automated tests** at release:
+The `0.2.0` release records **82 passing automated tests** at release:
 
 - 8 in `tests/test_voice_backend.py`
 - 40 in `tests/test_voice_intelligence.py`
@@ -206,13 +290,35 @@ The `0.2.0-consolidated-r2` changelog records **82 passing automated tests** at 
 
 Those are release-recorded results, not a claim that this README update reran the suite. No GitHub Actions workflow is currently present in the published repository, so remote CI execution has not been verified.
 
-The following release gates are still pending:
+The following validation gates remain pending:
 
 - Full evaluation-suite execution
 - Model-tier and capability benchmarks
 - Live TTS provider verification
 - Physical Roblox filming validation
-- Remote GitHub Actions verification
+
+## Roadmap
+
+### Implemented in the 0.2.0 prototype
+
+- Canonical Agent Skill architecture with six operating modes
+- Three production methods and capability-based production classification
+- Intelligence routing and adaptive task decomposition
+- Six internal voice identities with continuity rules and consent boundaries
+- Sixteen caption styles, including adaptive selection
+- Local recorded-voice processing, multi-scene assembly, visual QC, recovery state, and a final delivery gate
+- Model Engine, Code Engine, and hybrid execution guidance
+- Two-gate creative-quality and production-feasibility review
+
+### Next validation milestones
+
+- Execute all 14 evaluation scenarios and publish observed results
+- Run repeatable model-tier and capability benchmarks
+- Verify live provider integrations only where credentials, permissions, and spending approval are available
+- Validate capture workflows on real Roblox experiences and target devices
+- Expand automated regression coverage and maintain installation guides as agent support changes
+
+Roadmap items are goals, not promises of delivery dates. A feature is not considered validated until its stated test has actually been run and its evidence recorded.
 
 ## Known limits
 
@@ -229,11 +335,20 @@ A production is only `COMPLETE` when a playable output exists and passes the del
 ```text
 .
 ├── assets/showcase/
+├── evalutions/captionsamples/  # existing path spelling retained for compatibility
 ├── examples/recorded-voice-test-project/
 │   ├── README.md
 │   ├── generate_synthetic_fixtures.py
 │   └── project-voice-manifest.json
 ├── integrations/
+│   ├── agent-skills-cli.md
+│   ├── ai-studio.md
+│   ├── antigravity.md
+│   ├── chatgpt.md
+│   ├── claude-app.md
+│   ├── claude-code.md
+│   ├── codex.md
+│   └── gemini-cli.md
 ├── skills/
 │   └── roblox-town-director/
 │       ├── references/
@@ -249,7 +364,30 @@ A production is only `COMPLETE` when a playable output exists and passes the del
 └── README.md
 ```
 
-The caption evaluation samples are also present in the repository under `evalutions/captionsamples/` (the directory name is currently misspelled in the committed path).
+The caption evaluation sample directory currently uses the legacy path `evalutions/captionsamples/`; the spelling is retained here to match the committed repository path.
+
+## Contributing
+
+Contributions, bug reports, documentation improvements, evaluation cases, and carefully scoped production features are welcome.
+
+When proposing a change, include:
+
+1. **Problem:** what concrete user or production problem does it solve?
+2. **Change:** what should be modified, and why is this the right layer (skill instructions, reference, template, script, or test)?
+3. **Validation:** how can the change be tested, and what evidence would demonstrate success?
+
+Before submitting:
+- Keep the canonical skill and supporting references consistent.
+- Preserve capability honesty: distinguish implemented, configured, mocked, blocked, and live-verified behaviour.
+- Add or update tests for code changes and evaluation scenarios for meaningful behavioural changes.
+- Run the relevant checks and report exact commands and results. Do not label unrun tests as passing.
+- Never commit API keys, private recordings, or other secrets.
+
+Run the Python test suite from the repository root:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ## License
 
