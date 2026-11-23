@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """Command-line entrypoint for the Roblox Town Director Voice Intelligence module.
 
 Provides safe, non-secret-printing commands for:
