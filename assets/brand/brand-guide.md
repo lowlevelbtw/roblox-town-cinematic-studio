@@ -1,37 +1,36 @@
 # Brand guide
 
 ## Identity
-
-- **Project:** Roblox Town Cinematic Studio
-- **Skill:** `roblox-town-director`
-- **Creator / maintainer credit:** RITVIK
-- **GitHub account:** `lowlevelbtw`
-- **Tagline:** A production direction system
+- Project: Roblox Town Cinematic Studio
+- Canonical Agent Skill: `roblox-town-director`
+- Public creator / project maintainer credit: **RITVIK**
+- GitHub account: `lowlevelbtw`
+- Tagline: **Stories, directed. Production, considered.**
 
 ## Visual system
-
-The identity uses a restrained cinematic palette:
-
-| Token | Hex | Use |
+| Token | Hex | Role |
 |---|---|---|
 | Night | `#0D1117` | Primary background |
 | Ivory | `#F3EBDD` | Main mark and display text |
-| Steel blue | `#486A83` | Secondary shape and emphasis |
-| Mist blue | `#7EA3BC` | Small accent |
-| Slate | `#293542` | Rules and dividers |
+| Steel blue | `#486A83` | Secondary forms |
+| Mist blue | `#7EA3BC` | Accent |
+| Slate | `#293542` | Dividers and structure |
 
-Use clean sans-serif typography (Inter or a system equivalent), generous spacing, and simple geometric forms. The viewfinder frames a small town to connect filmmaking and Roblox environments.
+Use clean sans-serif typography, strong alignment, generous negative space, and restrained geometric forms. The viewfinder represents cinematic direction; the town represents the production subject.
 
-## Asset map
+## Asset directory
+- `icon.svg`: square app-style mark.
+- `logo.svg`: horizontal wordmark.
+- `hero.svg`: README masthead.
+- `skill-badge.svg`: compact skill identity badge.
+- `social-preview.svg`: repository social-preview master.
+- `brand-guide.md`: this guide.
 
-- `logo.svg` — horizontal project wordmark.
-- `icon.svg` — square app-style mark.
-- `social-preview.svg` — editable 1280 × 640 social-preview master.
-- `skills/roblox-town-director/assets/brand-mark.svg` — bundled mark available inside the Agent Skill folder.
+The skill-bundled copy is at `skills/roblox-town-director/assets/brand-mark.svg`.
 
-## Usage
-
-- Keep the mark on a dark or neutral background with adequate clear space.
-- Do not stretch, recolor arbitrarily, add glow effects, or place extra slogans inside the icon.
-- Keep creator credit visible but secondary to the project name.
-- Do not imply that every host application displays the bundled icon; host-specific skill UI support varies.
+## Rules
+- Keep creator credit secondary to the project name.
+- Preserve clear space and aspect ratios.
+- Do not add glow, bevels, random gradients, or decorative slogans.
+- Host applications may not display custom skill artwork; that depends on host support.
+- SVG is the editable source of truth. Export PNG/JPG derivatives when a platform requires raster images.
