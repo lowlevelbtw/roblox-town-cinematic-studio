@@ -17,6 +17,27 @@
 
 ---
 
+## Quick install
+
+Install the canonical `roblox-town-director` skill into Claude Code, Codex, and Antigravity with the community Skills CLI:
+
+```bash
+npx skills add lowlevelbtw/roblox-town-cinematic-studio \
+  --skill roblox-town-director \
+  -a claude-code -a codex -a antigravity
+```
+
+Add `-g` for a user-level installation across projects. To install into only one agent, keep just its matching `-a` flag. The CLI may ask you to choose an installation method; symlinks keep one canonical copy where supported, while copies are useful where symlinks are unavailable.
+
+Check or update the installation later:
+
+```bash
+npx skills list
+npx skills check
+npx skills update roblox-town-director
+```
+
+The Skills CLI installs the Agent Skill files; it does **not** install Roblox Studio, FFmpeg, Blender, video-generation services, API credentials, or other production dependencies. Google AI Studio does not use this local skill installer; follow the [AI Studio setup guide](integrations/ai-studio.md). See the [cross-agent installer guide](integrations/agent-skills-cli.md) for details and limitations.
 ## What is it?
 
 **Roblox Town Cinematic Studio** is a model- and provider-independent production skill built around one canonical director: `roblox-town-director`.
