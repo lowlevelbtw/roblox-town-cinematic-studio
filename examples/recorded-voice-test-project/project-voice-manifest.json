@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "recorded_voice_test_001",
+  "project_title": "Recorded Voice Backend Test Project",
+  "format": "short",
+  "registry_source": "../../skills/roblox-town-director/templates/voice-registry.json",
+  "active_provider": {
+    "adapter_id": "recorded_voice_ffmpeg",
+    "provider_name": "Recorded Voice Backend (FFmpeg)",
+    "verified_capabilities": {
+      "text_to_speech": false,
+      "voice_reference_input": false,
+      "authorized_voice_cloning": false,
+      "custom_voice_creation": false,
+      "emotion_delivery_controls": false,
+      "pronunciation_dictionaries": false,
+      "speech_speed_controls": false,
+      "audio_file_export": true,
+      "batch_generation": true,
+      "persistent_voice_ids": true,
+      "recorded_audio_import": true,
+      "additive_dialogue_mixing": true,
+      "ffmpeg_path": "/usr/bin/ffmpeg",
+      "ffprobe_path": "/usr/bin/ffprobe"
+    }
+  },
+  "character_voice_map": [
+    {
+      "character_id": "narrator_main",
+      "display_name": "Main Narrator",
+      "voice_id": "V01",
+      "provider_voice_id": null,
+      "lock_scope": "series_wide",
+      "pronunciation_notes": []
+    },
+    {
+      "character_id": "protagonist_leo",
+      "display_name": "Leo",
+      "voice_id": "V03",
+      "provider_voice_id": null,
+      "lock_scope": "series_wide",
+      "pronunciation_notes": []
+    },
+    {
+      "character_id": "friend_maya",
+      "display_name": "Maya",
+      "voice_id": "V05",
+      "provider_voice_id": null,
+      "lock_scope": "series_wide",
+      "pronunciation_notes": []
+    }
+  ],
+  "dialogue_assets": [
+    {
+      "scene_id": "S01",
+      "line_id": "S01_L01",
+      "character_id": "narrator_main",
+      "voice_id": "V01",
+      "start_sec": 0.0,
+      "end_sec": 2.5,
+      "text": "In this town, nobody can lie.",
+      "recording_path": "test_audio/v01_narrator_line1.wav",
+      "trim_silence": true,
+      "normalize": true,
+      "status": "approved",
+      "audio_asset_ref": "examples/recorded-voice-test-project/output/processed_stems/S01_L01_narrator_main_V01.wav",
+      "locked_from_regeneration": true
+    },
+    {
+      "scene_id": "S01",
+      "line_id": "S01_L02",
+      "character_id": "protagonist_leo",
+      "voice_id": "V03",
+      "start_sec": 3.0,
+      "end_sec": 6.0,
+      "text": "I didn't touch the trophy!",
+      "recording_path": "test_audio/v03_leo_line2.mp3",
+      "trim_start_sec": 0.2,
+      "trim_end_sec": 3.0,
+      "trim_silence": true,
+      "normalize": true,
+      "status": "approved",
+      "audio_asset_ref": "examples/recorded-voice-test-project/output/processed_stems/S01_L02_protagonist_leo_V03.wav",
+      "locked_from_regeneration": true
+    },
+    {
+      "scene_id": "S01",
+      "line_id": "S01_L03",
+      "character_id": "friend_maya",
+      "voice_id": "V05",
+      "start_sec": 6.5,
+      "end_sec": 9.0,
+      "text": "Look at the principal's hands.",
+      "recording_path": "test_audio/corrupt_maya_line3.wav",
+      "trim_silence": true,
+      "normalize": true,
+      "status": "failed",
+      "audio_asset_ref": null,
+      "locked_from_regeneration": false
+    },
+    {
+      "scene_id": "S01",
+      "line_id": "S01_L04",
+      "character_id": "narrator_main",
+      "voice_id": "V01",
+      "start_sec": 9.5,
+      "end_sec": 12.0,
+      "text": "Then red smoke filled the hall.",
+      "recording_path": "test_audio/missing_line4.wav",
+      "trim_silence": true,
+      "normalize": true,
+      "status": "missing",
+      "audio_asset_ref": null,
+      "locked_from_regeneration": false
+    }
+  ],
+  "resume_checkpoint": {
+    "last_completed_line_id": "S01_L02",
+    "next_pending_line_id": "S01_L03",
+    "blockers": [
+      "S01_L03 (failed): Invalid audio file (/working_dir/c_a22b9485ff6ab104/roblox-town-cinematic-studio/examples/recorded-voice-test-project/test_audio/corrupt_maya_line3.wav: Invalid data found when processing input)",
+      "S01_L04 (missing): Recording file does not exist: test_audio/missing_line4.wav"
+    ]
+  }
+}
