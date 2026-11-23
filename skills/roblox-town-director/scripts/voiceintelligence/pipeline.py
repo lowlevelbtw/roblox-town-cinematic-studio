@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Project maintainer: RITVIK | Roblox Town Cinematic Studio
 """End-to-End Audio Generation & Video Synchronization Pipeline for Roblox Town Director.
 
 Implements:
